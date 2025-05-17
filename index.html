@@ -3,44 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coming Soon</title>
+  <title>Coming Soon | Your Name</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: #0f0f0f;
-      color: #ffffff;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      overflow: hidden;
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #0f0f0f;
+      z-index: -1;
+    }
+    .container {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeIn 1.5s ease-out;
+      padding: 0 20px;
     }
     h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 3.2rem;
+      text-shadow: 0 0 20px #00ffe0;
+      font-family: 'Orbitron', sans-serif;
+      animation: glowPulse 2s infinite alternate;
     }
-    p {
-      color: #bbbbbb;
+    .typing-text {
+       font-size: 1.4rem;
+       margin: 15px auto;
+       white-space: nowrap;
+       overflow: hidden;
+       display: inline-block;
+       border-right: 2px solid #fff;
     }
-    .loader {
-      margin-top: 20px;
-      border: 5px solid #555;
-      border-top: 5px solid #00ffcc;
+
+    .typing-text span {
+      display: inline-block;
+      animation: typing 4s steps(34, end) forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-60%); }
+      to { opacity: 1; transform: translateY(-50%); }
+    }
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px #00ffe0; }
+      to { text-shadow: 0 0 25px #00ffe0; }
+    }
+    .notify-btn {
+      position: fixed;
+      left: 50%;
+      bottom: 80px;
+      transform: translateX(-50%);
+      padding: 12px 30px;
+      background: #00ffe0;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffe0;
+      transition: all 0.3s ease;
+      z-index: 20;
+    }
+    .notify-btn:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 0 25px #00ffe0;
+      transform: scale(1.05);
+    }
+    .socials {
+      margin-top: 35px;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #00ffe0;
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+    .socials a:hover {
+      transform: scale(1.3);
+      color: #fff;
+    }
+
+    /* Optional circular profile image */
+    .profile-img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
+      border: 3px solid #00ffe0;
+      margin-bottom: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 15px #00ffe0;
     }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
-  <h1>Portfolio Loading...</h1>
-  <p>I'm working on something amazing. Stay tuned!</p>
-  <div class="loader"></div>
+  <div id="particles-js"></div>
+  <div class="container">
+    <!-- Optional profile image -->
+    <!-- <img src="your-image.jpg" class="profile-img" alt="Profile Picture"> -->
+
+    <h1>Hello, I'm Varun Nimavat</h1>
+    <div class="typing-text"><span>My Portfolio is Launching Soon...</span></div>
+    <div class="socials">
+      <a href="https://github.com/varunn888" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/varun-nimavat-045643330" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:varunnimavat8839@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <button class="notify-btn" onclick="alert('You will be notified soon!')">Notify Me</button>
+
+  <div class="footer">© 2025 Varun Nimavat. All rights reserved.</div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#00ffe0" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00ffe0",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
