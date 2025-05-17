@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #bbbbbb;
+    }
+    .loader {
+      margin-top: 20px;
+      border: 5px solid #555;
+      border-top: 5px solid #00ffcc;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Portfolio Loading...</h1>
+  <p>I'm working on something amazing. Stay tuned!</p>
+  <div class="loader"></div>
+</body>
+</html>
